@@ -7,14 +7,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY", "no_key_found")
-os.environ["LANGCHAIN_TRACING_V2"] = "true" #for langsmith tracking
-os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY", "no_key_found")
-os.environ["LANGSMITH_TRACING"]="true"
-# os.environ["LANGSMITH_ENDPOINT"]="https://api.smith.langchain.com"
-os.environ["LANGSMITH_API_KEY"]="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"
-os.environ["LANGSMITH_PROJECT"]="PilotProject"
-
 
 # Define prompt template
 prompt = ChatPromptTemplate.from_messages(
