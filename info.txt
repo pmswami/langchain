@@ -1,0 +1,56 @@
+LangChain Components
+    1. LangChain
+    2. LangServe
+    3. LangSmith
+    4. Chains
+    5. Agents
+    6. Retrivers
+    7. LCEL
+    8. LLMs
+
+LangSmith is used for 
+    1. Debugging
+    2. Playground
+    3. Evaluation
+    4. Annotation
+    5. Monitoring
+
+LangServe -> Chains as Rest APIs
+
+Template -> Reference Applications
+
+LangChain
+    1. Chains
+    2. Agents
+    3. Retriveal Strategies
+
+LangChain-Community
+    Model IO
+        1. Model
+        2. Prompt
+        3. Example Selector
+        4. Output Parser
+
+    Retriever
+        1. Retriever
+        2. Document Loader
+        3. Vector Store
+        4. Text Splitter
+        5. Embedding Model
+
+    Agent Tooling 
+        1. Tool 
+        2. Toolkit
+
+LangChain-Core
+    LCEL -> LangChain Expression Language
+    1. Parallelization
+    2. Fallback
+    3. Tracing
+    4. Batching
+    5. Streaming
+    6. Async
+    7. Composition
+
+Command to fix ollama server issue
+Get-Process | Where-Object {$_.ProcessName -like "*ollama*"} | Stop-Process
