@@ -1,11 +1,12 @@
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_community.chat_models import ChatOllama
-import os
+from langchain_community.llms import Ollama
 import streamlit as st
+import os
 from dotenv import load_dotenv
 load_dotenv()
+
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY", "no_key_found")
 os.environ["LANGCHAIN_TRACING_V2"] = "true" #for langsmith tracking
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY", "no_key_found")
@@ -30,8 +31,7 @@ input_text = st.text_input("Search")
 
 
 #Create chain
-# llm = ChatOpenAI(model="gpt-3.5-turbo")
-llm = ChatOllama(model="deepseek-r1:1.5b") # open sourced model
+llm = Ollama(model="gemma3:1b") # open sourced model
 output_parser = StrOutputParser()
 chain = prompt | llm | output_parser
 
