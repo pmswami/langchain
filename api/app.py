@@ -26,9 +26,10 @@ add_routes(
 model = Ollama(model="gemma3:1b")
 llm = Ollama(model="deepseek-r1:1.5b")
 
-prompt1 = ChatPromptTemplate.from_template("Write me an essay about {topic} around 100 words")
+prompt1 = ChatPromptTemplate.from_template("Write me an essay about {topic} for a 5 year old")
 prompt2 = ChatPromptTemplate.from_template("Write me a poem about {topic} around 150 words")
-
+# chain1 = prompt1 | llm
+# print(chain1.invoke({"topic":"machine learning"}))
 
 add_routes(
     app,
@@ -43,4 +44,4 @@ add_routes(
 )
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="localhost", port=8000)
